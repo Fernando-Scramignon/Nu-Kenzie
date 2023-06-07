@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
     --color-primary: #FD377E;
     --color-primary-2: #E34981;
     --color-secondary: #03B898;
-    
+
     --grey-1: #F8F9FA;
     --grey-2: #E9ECEF;
     --grey-3: #868E96;
@@ -17,6 +17,9 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     border: 0;
     box-sizing: border-box;
+
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
 }
 `
 export { GlobalStyle }

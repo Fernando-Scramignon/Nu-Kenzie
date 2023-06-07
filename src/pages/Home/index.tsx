@@ -1,9 +1,11 @@
 import { Container } from './style'
 
+import Header from '../../components/Header'
+
 function Home() {
     return (
         <Container>
-            <h1>Home Page goes here</h1>
+            <Header />
         </Container>
     )
 }

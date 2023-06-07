@@ -10,4 +10,9 @@ interface IInputProps {
     helperText?: string
 }
 
-export type { IButtonProps, IInputProps }
+interface ISelectProps {
+    title: string
+    placeholder?: string
+}
+
+export type { IButtonProps, IInputProps, ISelectProps }

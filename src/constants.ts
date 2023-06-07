@@ -1,0 +1,3 @@
+const DESKTOP_BREAKPOINT: number = 1024
+
+export { DESKTOP_BREAKPOINT }

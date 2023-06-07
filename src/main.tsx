@@ -1,10 +1,12 @@
 import ReactDOM from 'react-dom/client'
-import Welcome from './pages/Welcome'
+
 import { GlobalStyle } from './styles/global'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './router'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <>
         <GlobalStyle />
-        <Welcome />
+        <RouterProvider router={router} />
     </>
 )

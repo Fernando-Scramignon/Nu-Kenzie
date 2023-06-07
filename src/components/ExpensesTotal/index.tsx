@@ -14,4 +14,4 @@ function ExpensesTotal() {
     )
 }
 
-export { ExpensesTotal }
+export default ExpensesTotal

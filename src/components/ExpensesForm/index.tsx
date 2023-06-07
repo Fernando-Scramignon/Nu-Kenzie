@@ -19,4 +19,4 @@ function ExpensesForm() {
     )
 }
 
-export { ExpensesForm }
+export default ExpensesForm

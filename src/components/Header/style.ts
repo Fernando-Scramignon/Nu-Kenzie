@@ -11,6 +11,12 @@ const Container = styled.header`
     display: flex;
     align-items: center;
 
+    img {
+        width: 113;
+        height: 18px;
+        cursor: pointer;
+    }
+
     @media (min-width: 1024px) {
         padding: 0px 220px;
     }

@@ -8,6 +8,7 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 70px;
 `
 
 const ContentSection = styled.main`
@@ -27,6 +28,32 @@ const ContentSection = styled.main`
     p {
         color: var(--grey-2);
     }
+
+    button {
+        font-weight: 500;
+    }
+
+    @media (min-width: 1024px) {
+        h1 {
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        button {
+            font-size: 16px;
+        }
+    }
 `
 
-export { Container, ContentSection }
+const SVGSection = styled.section`
+    img {
+        max-height: 500px;
+        height: fit-content;
+        width: fit-content;
+    }
+`
+
+export { Container, ContentSection, SVGSection }

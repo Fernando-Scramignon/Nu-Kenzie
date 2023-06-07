@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
     border: 0;
     box-sizing: border-box;
 
-    color: #ffffff;
+    color: var(--grey-4);
     font-family: 'Inter', sans-serif;
 }
 `

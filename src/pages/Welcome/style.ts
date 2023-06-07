@@ -23,6 +23,7 @@ const ContentSection = styled.main`
     h1 {
         font-family: 'Nunito', sans-serif;
         font-size: 30px;
+        color: #ffffff;
     }
 
     p {

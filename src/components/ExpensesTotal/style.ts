@@ -13,6 +13,10 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 14px;
+
+    @media (min-width: 1024px) {
+        width: 100%;
+    }
 `
 
 const ExpensesTotalValue = styled.div`

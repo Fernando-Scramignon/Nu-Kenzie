@@ -1,13 +1,19 @@
-import { Container } from './style'
+import { Container, InsertionArea, OverviewArea } from './style'
 
-import { ExpensesForm } from '../ExpensesForm'
-import { ExpensesTotal } from '../ExpensesTotal'
+import ExpensesForm from '../ExpensesForm'
+import ExpensesTotal from '../ExpensesTotal'
+import ExpensesOverview from '../ExpensesOverview'
 
 function ExpensesManager() {
     return (
         <Container>
-            <ExpensesForm />
-            <ExpensesTotal />
+            <InsertionArea>
+                <ExpensesForm />
+                <ExpensesTotal />
+            </InsertionArea>
+            <OverviewArea>
+                <ExpensesOverview />
+            </OverviewArea>
         </Container>
     )
 }

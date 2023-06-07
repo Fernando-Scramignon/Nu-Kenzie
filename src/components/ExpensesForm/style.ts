@@ -18,6 +18,10 @@ const Container = styled.div`
         margin-top: 10px;
         width: 100%;
     }
+
+    @media (min-width: 1024px) {
+        min-width: 360px;
+    }
 `
 
 export { Container }

@@ -7,6 +7,40 @@ const Container = styled.main`
     flex-direction: column;
     align-items: center;
     gap: 19px;
+
+    @media (min-width: 1024px) {
+        flex-direction: row;
+        align-items: normal;
+        justify-content: center;
+        gap: 60px;
+    }
 `
 
-export { Container }
+const InsertionArea = styled.div`
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 19px;
+
+    @media (min-width: 1024px) {
+        width: auto;
+    }
+`
+
+const OverviewArea = styled.div`
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 1024px) {
+        /* width: auto; */
+        max-width: 560px;
+        align-items: flex-start;
+    }
+`
+
+export { Container, InsertionArea, OverviewArea }

@@ -4,4 +4,10 @@ interface IButtonProps {
     children: ReactNode
 }
 
-export type { IButtonProps }
+interface IInputProps {
+    title: string
+    placeholder?: string
+    helperText?: string
+}
+
+export type { IButtonProps, IInputProps }

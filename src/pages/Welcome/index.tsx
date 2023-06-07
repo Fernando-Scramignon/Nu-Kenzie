@@ -22,7 +22,7 @@ function Welcome() {
     useEffect(() => window.addEventListener('resize', handleResize), [])
 
     return (
-        <Container onClick={() => console.log(isDesktop)}>
+        <Container>
             <ContentSection>
                 <img src={logoAlt} alt="Logo with alternative colors" />
                 <h1>Centralize o controle das suas finanças</h1>

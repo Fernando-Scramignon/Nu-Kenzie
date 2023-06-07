@@ -10,6 +10,10 @@ const Container = styled.header`
 
     display: flex;
     align-items: center;
+
+    @media (min-width: 1024px) {
+        padding: 0px 220px;
+    }
 `
 
 export { Container }

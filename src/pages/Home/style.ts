@@ -10,6 +10,10 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 29px;
+
+    @media (min-width: 1920px) {
+        gap: 100px;
+    }
 `
 
 export { Container }

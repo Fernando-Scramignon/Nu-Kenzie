@@ -20,6 +20,24 @@ const GlobalStyle = createGlobalStyle`
 
     color: var(--grey-4);
     font-family: 'Inter', sans-serif;
+
+    /* resets selects */
+    select {
+        /* this ones removes the dropdown arrow */
+        /* appearance: none; */
+
+        background-color: transparent;
+        border: none;
+        padding: 0 1em 0 0;
+        margin: 0;
+        width: 100%;
+        font-family: inherit;
+        font-size: inherit;
+        cursor: inherit;
+        line-height: inherit;
+    }
+
+
 }
 `
 export { GlobalStyle }

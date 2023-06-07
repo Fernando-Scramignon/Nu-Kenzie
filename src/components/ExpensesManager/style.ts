@@ -37,8 +37,7 @@ const OverviewArea = styled.div`
     align-items: center;
 
     @media (min-width: 1024px) {
-        /* width: auto; */
-        max-width: 560px;
+        max-width: 550px;
         align-items: flex-start;
     }
 `

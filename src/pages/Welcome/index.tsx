@@ -5,14 +5,13 @@ import logoAlt from '../../assets/nu-kenzie-alt.svg'
 
 import Button from '../../components/Button'
 
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import { usePage } from '../../contexts'
 
 import { DESKTOP_BREAKPOINT } from '../../constants'
 
 function Welcome() {
-    const [isDesktop, setIsDesktop] = useState<boolean>(
-        window.innerWidth >= DESKTOP_BREAKPOINT
-    )
+    const { isDesktop, setIsDesktop } = usePage()
 
     function handleResize(): void {
         if (window.innerWidth < DESKTOP_BREAKPOINT) setIsDesktop(false)

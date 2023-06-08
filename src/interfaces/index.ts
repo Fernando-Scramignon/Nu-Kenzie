@@ -15,4 +15,8 @@ interface ISelectProps {
     placeholder?: string
 }
 
-export type { IButtonProps, IInputProps, ISelectProps }
+interface IOverviewCardProps {
+    type: 'income' | 'outcome'
+}
+
+export type { IButtonProps, IInputProps, ISelectProps, IOverviewCardProps }

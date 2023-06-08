@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { IOverviewCardProps } from '../../interfaces'
 
 const Container = styled.div`
     width: 100%;
@@ -12,12 +13,13 @@ const Container = styled.div`
     }
 `
 
-const Type = styled.div`
+const Type = styled.div<IOverviewCardProps>`
     height: 156px;
     width: 4px;
     border-radius: 4px 0px 0px 4px;
 
-    background-color: var(--color-secondary);
+    background-color: ${(props) =>
+        props.type == 'income' ? 'var(--color-secondary)' : 'var(--grey-2)'};
 
     @media (min-width: 1024px) {
         height: 90px;

@@ -11,6 +11,10 @@ const Container = styled.button`
     justify-content: center;
     align-items: center;
 
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+
     cursor: pointer;
     transition: 500ms;
     &:hover {

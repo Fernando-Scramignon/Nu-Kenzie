@@ -23,6 +23,7 @@ const ContentSection = styled.main`
     h1 {
         font-family: 'Nunito', sans-serif;
         font-size: 30px;
+        color: #ffffff;
     }
 
     p {
@@ -31,6 +32,7 @@ const ContentSection = styled.main`
 
     button {
         font-weight: 500;
+        width: 280px;
     }
 
     @media (min-width: 1024px) {

@@ -2,13 +2,13 @@ import { Container } from './style'
 
 import { ISelectProps } from '../../interfaces'
 
-function Select({ title }: ISelectProps) {
+function Select({ description }: ISelectProps) {
     return (
         <Container>
-            <label htmlFor={title} className="select-label">
-                {title}
+            <label htmlFor={description} className="select-label">
+                {description}
             </label>
-            <select name={title} defaultValue={'income'}>
+            <select name={description} defaultValue={'income'}>
                 <option value="income">Entrada</option>
                 <option value="outcome">Despesa</option>
             </select>

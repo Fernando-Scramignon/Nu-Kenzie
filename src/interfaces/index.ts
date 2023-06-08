@@ -5,14 +5,14 @@ interface IButtonProps {
 }
 
 interface IInputProps {
-    title: string
+    description: string
     placeholder?: string
     helperText?: string
     type?: string
 }
 
 interface ISelectProps {
-    title: string
+    description: string
     placeholder?: string
 }
 

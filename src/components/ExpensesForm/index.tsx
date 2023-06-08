@@ -8,16 +8,16 @@ function ExpensesForm() {
     return (
         <Container>
             <Input
-                title="Descrição"
+                description="Descrição"
                 placeholder="Digite aqui sua descrição"
                 helperText="Ex: Compra de roupas"
             />
             <Input
-                title="Valor"
+                description="Valor"
                 placeholder="Digite aqui o valor"
                 type="number"
             />
-            <Select title="Tipo de valor" />
+            <Select description="Tipo de valor" />
             <Button>Inserir Valor</Button>
         </Container>
     )

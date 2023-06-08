@@ -6,11 +6,18 @@ import {
     UpperRow,
     LowerRow,
 } from './style'
+
 import { IOverviewCardProps } from '../../interfaces'
+import { IExpensesType } from '../../interfaces'
 
 import { FaTrash } from 'react-icons/fa'
 
-function OverviewCard({ type }: IOverviewCardProps) {
+const ExpensesTypeMap: IExpensesType = {
+    income: 'Entrada',
+    outcome: 'Saída',
+}
+
+function OverviewCard({ type, description, value }: IOverviewCardProps) {
     return (
         <Container>
             <TypeSection>
@@ -18,12 +25,14 @@ function OverviewCard({ type }: IOverviewCardProps) {
             </TypeSection>
             <InfoSection>
                 <UpperRow>
-                    <h3>Salário - Mês Janeiro</h3>
+                    <h3>{description}</h3>
                     <FaTrash fill="#343A40" size="12px" cursor="pointer" />
                 </UpperRow>
                 <LowerRow>
-                    <span className="info-section-type">Entrada</span>
-                    <span className="info-section-value">R$ 6.600,00</span>
+                    <span className="info-section-type">
+                        {ExpensesTypeMap[type]}
+                    </span>
+                    <span className="info-section-value">R$ {value}</span>
                 </LowerRow>
             </InfoSection>
         </Container>

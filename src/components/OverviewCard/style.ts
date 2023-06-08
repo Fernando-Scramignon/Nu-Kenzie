@@ -1,5 +1,8 @@
 import styled from 'styled-components'
-import { IOverviewCardProps } from '../../interfaces'
+
+interface ITypeProps {
+    type: 'income' | 'outcome'
+}
 
 const Container = styled.div`
     width: 100%;
@@ -12,7 +15,7 @@ const Container = styled.div`
     gap: 14px;
 `
 
-const Type = styled.div<IOverviewCardProps>`
+const Type = styled.div<ITypeProps>`
     height: 90px;
     width: 4px;
     border-radius: 4px 0px 0px 4px;

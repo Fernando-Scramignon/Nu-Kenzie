@@ -1,7 +1,14 @@
+import {
+    Container,
+    TypeSection,
+    Type,
+    InfoSection,
+    UpperRow,
+    LowerRow,
+} from './style'
 import { IOverviewCardProps } from '../../interfaces'
-import { Container, TypeSection, Type, InfoSection } from './style'
 
-// import { FaTrash } from 'react-icons/fa'
+import { FaTrash } from 'react-icons/fa'
 
 function OverviewCard({ type }: IOverviewCardProps) {
     return (
@@ -9,7 +16,16 @@ function OverviewCard({ type }: IOverviewCardProps) {
             <TypeSection>
                 <Type type={type} />
             </TypeSection>
-            <InfoSection></InfoSection>
+            <InfoSection>
+                <UpperRow>
+                    <h3>Salário - Mês Janeiro</h3>
+                    <FaTrash fill="#343A40" size="12px" cursor="pointer" />
+                </UpperRow>
+                <LowerRow>
+                    <span className="info-section-type">Entrada</span>
+                    <span className="info-section-value">R$ 6.600,00</span>
+                </LowerRow>
+            </InfoSection>
         </Container>
     )
 }

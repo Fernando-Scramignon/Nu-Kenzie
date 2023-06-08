@@ -3,6 +3,7 @@ import { IInputProps } from '../../interfaces'
 
 function Input({
     description,
+    name,
     placeholder,
     helperText,
     type = 'text',
@@ -10,16 +11,12 @@ function Input({
     return (
         <Container>
             <TitleDiv>
-                <label htmlFor={description} className="input-label">
+                <label htmlFor={name} className="input-label">
                     {description}
                 </label>
             </TitleDiv>
             <InputDiv>
-                <input
-                    type={type}
-                    name={description}
-                    placeholder={placeholder}
-                />
+                <input type={type} name={name} placeholder={placeholder} />
                 {helperText && <p className="helper-text">{helperText}</p>}
             </InputDiv>
         </Container>

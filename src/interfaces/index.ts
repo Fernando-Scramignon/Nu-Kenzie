@@ -18,12 +18,14 @@ interface ISelectProps {
 interface IOverviewCardProps {
     description: string
     value: number
-    type: 'income' | 'outcome'
+    type: 'income' | 'expense'
 }
+
+interface IOverviewCard extends IOverviewCardProps {}
 
 interface IExpensesType {
     income: string
-    outcome: string
+    expense: string
 }
 
 export type {
@@ -31,5 +33,6 @@ export type {
     IInputProps,
     ISelectProps,
     IOverviewCardProps,
+    IOverviewCard,
     IExpensesType,
 }

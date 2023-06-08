@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 interface ITypeProps {
-    type: 'income' | 'outcome'
+    type: 'income' | 'expense'
 }
 
 const Container = styled.div`

@@ -14,7 +14,7 @@ import { FaTrash } from 'react-icons/fa'
 
 const ExpensesTypeMap: IExpensesType = {
     income: 'Entrada',
-    outcome: 'Saída',
+    expense: 'Saída',
 }
 
 function OverviewCard({ type, description, value }: IOverviewCardProps) {

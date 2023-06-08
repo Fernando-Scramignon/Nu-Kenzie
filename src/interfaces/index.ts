@@ -16,7 +16,20 @@ interface ISelectProps {
 }
 
 interface IOverviewCardProps {
+    description: string
+    value: number
     type: 'income' | 'outcome'
 }
 
-export type { IButtonProps, IInputProps, ISelectProps, IOverviewCardProps }
+interface IExpensesType {
+    income: string
+    outcome: string
+}
+
+export type {
+    IButtonProps,
+    IInputProps,
+    ISelectProps,
+    IOverviewCardProps,
+    IExpensesType,
+}

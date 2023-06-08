@@ -22,7 +22,9 @@ function ExpensesOverview() {
     return (
         <EmptyOverviewContainer>
             <h2>Resumo financeiro</h2>
-            <p>Você ainda não possuí nenhum lançamento</p>
+            {!overviewCards.length && (
+                <p>Você ainda não possuí nenhum lançamento</p>
+            )}
             {overviewCards.map(({ description, type, value }, index) => (
                 <OverviewCard
                     key={index}

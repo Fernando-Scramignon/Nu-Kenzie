@@ -8,6 +8,7 @@ interface IInputProps {
     title: string
     placeholder?: string
     helperText?: string
+    type?: string
 }
 
 interface ISelectProps {

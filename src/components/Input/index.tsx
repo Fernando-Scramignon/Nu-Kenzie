@@ -1,7 +1,7 @@
 import { Container, InputDiv, TitleDiv } from './style'
 import { IInputProps } from '../../interfaces'
 
-function Input({ title, placeholder, helperText }: IInputProps) {
+function Input({ title, placeholder, helperText, type = 'text' }: IInputProps) {
     return (
         <Container>
             <TitleDiv>
@@ -10,7 +10,7 @@ function Input({ title, placeholder, helperText }: IInputProps) {
                 </label>
             </TitleDiv>
             <InputDiv>
-                <input name={title} placeholder={placeholder} />
+                <input type={type} name={title} placeholder={placeholder} />
                 {helperText && <p className="helper-text">{helperText}</p>}
             </InputDiv>
         </Container>

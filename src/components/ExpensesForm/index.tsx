@@ -12,7 +12,11 @@ function ExpensesForm() {
                 placeholder="Digite aqui sua descrição"
                 helperText="Ex: Compra de roupas"
             />
-            <Input title="Valor" placeholder="Digite aqui o valor" />
+            <Input
+                title="Valor"
+                placeholder="Digite aqui o valor"
+                type="number"
+            />
             <Select title="Tipo de valor" />
             <Button>Inserir Valor</Button>
         </Container>

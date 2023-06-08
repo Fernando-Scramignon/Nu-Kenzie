@@ -32,6 +32,7 @@ const ContentSection = styled.main`
 
     button {
         font-weight: 500;
+        width: 280px;
     }
 
     @media (min-width: 1024px) {

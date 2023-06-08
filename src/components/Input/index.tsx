@@ -1,16 +1,22 @@
 import { Container, InputDiv, TitleDiv } from './style'
 import { IInputProps } from '../../interfaces'
 
-function Input({ title, placeholder, helperText }: IInputProps) {
+function Input({
+    description,
+    name,
+    placeholder,
+    helperText,
+    type = 'text',
+}: IInputProps) {
     return (
         <Container>
             <TitleDiv>
-                <label htmlFor={title} className="input-label">
-                    {title}
+                <label htmlFor={name} className="input-label">
+                    {description}
                 </label>
             </TitleDiv>
             <InputDiv>
-                <input name={title} placeholder={placeholder} />
+                <input type={type} name={name} placeholder={placeholder} />
                 {helperText && <p className="helper-text">{helperText}</p>}
             </InputDiv>
         </Container>

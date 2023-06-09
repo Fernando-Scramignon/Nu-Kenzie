@@ -38,6 +38,10 @@ interface IExpensesType {
     expense: string
 }
 
+interface IExpensesTotalProps {
+    value: number
+}
+
 export type {
     IButtonProps,
     IInputProps,
@@ -45,4 +49,5 @@ export type {
     IOverviewCardProps,
     IOverviewCard,
     IExpensesType,
+    IExpensesTotalProps,
 }

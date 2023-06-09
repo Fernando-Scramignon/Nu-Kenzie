@@ -13,7 +13,15 @@ function ExpensesManager() {
         <Container>
             <InsertionArea>
                 <ExpensesForm />
-                {overviewCards.length > 0 && <ExpensesTotal />}
+                {overviewCards.length > 0 && (
+                    <ExpensesTotal
+                        value={overviewCards.reduce((acc, current) => {
+                            return current.type == 'income'
+                                ? acc + Number(current.value)
+                                : acc - Number(current.value)
+                        }, 0)}
+                    />
+                )}
             </InsertionArea>
             <OverviewArea>
                 <ExpensesOverview />

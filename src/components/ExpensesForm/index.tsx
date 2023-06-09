@@ -1,5 +1,7 @@
 import { Container } from './style'
 
+import { ChangeEvent } from 'react'
+
 import Input from '../Input'
 import Button from '../Button'
 import { Select } from '../Select'
@@ -12,7 +14,14 @@ import { IOverviewCard } from '../../interfaces'
 import { usePage } from '../../contexts'
 
 function ExpensesForm() {
-    const { overviewCards, setOverviewCards } = usePage()
+    const {
+        overviewCards,
+        setOverviewCards,
+        descriptionInput,
+        setDescriptionInput,
+        valueInput,
+        setValueInput,
+    } = usePage()
 
     const {
         register,
@@ -29,8 +38,19 @@ function ExpensesForm() {
         setOverviewCards(newArray)
     }
 
+    function onChangeDescription(event: ChangeEvent<HTMLInputElement>) {
+        setDescriptionInput(event.target.value)
+    }
+
+    function onChangeValue(event: ChangeEvent<HTMLInputElement>) {
+        setValueInput(event.target.value)
+    }
+
     return (
-        <Container onSubmit={handleSubmit(onSubmitFunction)}>
+        <Container
+            onClick={() => setDescriptionInput('')}
+            onSubmit={handleSubmit(onSubmitFunction)}
+        >
             <Input
                 name="description"
                 register={register}
@@ -38,6 +58,8 @@ function ExpensesForm() {
                 description="Descrição"
                 placeholder="Digite aqui sua descrição"
                 helperText="Ex: Compra de roupas"
+                state={descriptionInput}
+                onChange={onChangeDescription}
             />
             <Input
                 name="value"
@@ -46,6 +68,8 @@ function ExpensesForm() {
                 description="Valor"
                 placeholder="Digite aqui o valor"
                 type="number"
+                state={valueInput}
+                onChange={onChangeValue}
             />
             <Select
                 name="type"

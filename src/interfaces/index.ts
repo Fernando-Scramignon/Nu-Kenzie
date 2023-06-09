@@ -3,6 +3,8 @@ import { UseFormRegister } from 'react-hook-form'
 
 interface IButtonProps {
     children: ReactNode
+    type?: 'submit' | 'button' | 'reset'
+    onClickFunction?: () => void
 }
 
 interface IInputProps {

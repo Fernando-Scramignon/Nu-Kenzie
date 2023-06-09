@@ -1,12 +1,12 @@
 import { IButtonProps } from '../../interfaces'
 import { Container } from './style'
 
-import { useNavigate } from 'react-router-dom'
-
-function Button({ children }: IButtonProps) {
-    const navigate = useNavigate()
-
-    return <Container onClick={() => navigate('/home')}>{children}</Container>
+function Button({ children, type = 'button', onClickFunction }: IButtonProps) {
+    return (
+        <Container type={type} onClick={onClickFunction}>
+            {children}
+        </Container>
+    )
 }
 
 export default Button

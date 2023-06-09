@@ -3,6 +3,8 @@ import { UseFormRegister } from 'react-hook-form'
 
 interface IButtonProps {
     children: ReactNode
+    type?: 'submit' | 'button' | 'reset'
+    onClickFunction?: () => void
 }
 
 interface IInputProps {
@@ -36,6 +38,10 @@ interface IExpensesType {
     expense: string
 }
 
+interface IExpensesTotalProps {
+    value: number
+}
+
 export type {
     IButtonProps,
     IInputProps,
@@ -43,4 +49,5 @@ export type {
     IOverviewCardProps,
     IOverviewCard,
     IExpensesType,
+    IExpensesTotalProps,
 }

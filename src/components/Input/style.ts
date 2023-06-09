@@ -9,11 +9,23 @@ const Container = styled.div`
 `
 
 const TitleDiv = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     .input-label {
         font-size: 12px;
         font-weight: 400;
 
         margin-left: 7px;
+    }
+
+    .input-error {
+        font-family: 'Inter', sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+
+        color: var(--color-primary);
     }
 `
 

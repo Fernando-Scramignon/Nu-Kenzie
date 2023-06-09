@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Container = styled.div`
+const Container = styled.form`
     width: 92%;
     max-width: 360px;
     padding: 30px 21px;
@@ -12,7 +12,7 @@ const Container = styled.div`
 
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 
     button {
         margin-top: 10px;

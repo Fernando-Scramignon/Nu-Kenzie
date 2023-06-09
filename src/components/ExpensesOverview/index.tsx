@@ -2,22 +2,9 @@ import { EmptyOverviewContainer } from './style'
 
 import OverviewCard from '../OverviewCard'
 import { usePage } from '../../contexts'
-import { useEffect } from 'react'
 
 function ExpensesOverview() {
-    const { overviewCards, setOverviewCards } = usePage()
-
-    function testCards() {
-        setOverviewCards([
-            { description: 'Salário - dezembro', type: 'income', value: 4000 },
-            { description: 'Conta - internet', type: 'expense', value: 100 },
-            { description: 'Salário - janeiro', type: 'income', value: 4000 },
-        ])
-    }
-
-    useEffect(() => {
-        testCards()
-    }, [])
+    const { overviewCards } = usePage()
 
     return (
         <EmptyOverviewContainer>

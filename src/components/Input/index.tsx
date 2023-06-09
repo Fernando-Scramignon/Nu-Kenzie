@@ -7,6 +7,8 @@ function Input({
     placeholder,
     helperText,
     type = 'text',
+    register,
+    errors,
 }: IInputProps) {
     return (
         <Container>
@@ -14,9 +16,16 @@ function Input({
                 <label htmlFor={name} className="input-label">
                     {description}
                 </label>
+                {errors[name] && (
+                    <p className="input-error">{errors[name]?.message}</p>
+                )}
             </TitleDiv>
             <InputDiv>
-                <input type={type} name={name} placeholder={placeholder} />
+                <input
+                    {...register(name)}
+                    type={type}
+                    placeholder={placeholder}
+                />
                 {helperText && <p className="helper-text">{helperText}</p>}
             </InputDiv>
         </Container>

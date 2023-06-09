@@ -9,8 +9,11 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { expensesFormSchema } from '../../schemas'
 
 import { IOverviewCard } from '../../interfaces'
+import { usePage } from '../../contexts'
 
 function ExpensesForm() {
+    const { overviewCards, setOverviewCards } = usePage()
+
     const {
         register,
         handleSubmit,
@@ -19,11 +22,19 @@ function ExpensesForm() {
         resolver: yupResolver(expensesFormSchema),
     })
 
+    function onSubmitFunction(data: IOverviewCard): void {
+        // avoids mutation
+        const dataCopy: IOverviewCard = { ...data }
+        const newArray = [dataCopy, ...overviewCards]
+        setOverviewCards(newArray)
+    }
+
     return (
-        <Container onClick={() => console.log(errors)}>
+        <Container onSubmit={handleSubmit(onSubmitFunction)}>
             <Input
                 name="description"
                 register={register}
+                errors={errors}
                 description="Descrição"
                 placeholder="Digite aqui sua descrição"
                 helperText="Ex: Compra de roupas"
@@ -31,6 +42,7 @@ function ExpensesForm() {
             <Input
                 name="value"
                 register={register}
+                errors={errors}
                 description="Valor"
                 placeholder="Digite aqui o valor"
                 type="number"
@@ -40,7 +52,7 @@ function ExpensesForm() {
                 register={register}
                 description="Tipo de valor"
             />
-            <Button>Inserir Valor</Button>
+            <Button type="submit">Inserir Valor</Button>
         </Container>
     )
 }

@@ -7,11 +7,14 @@ import Button from '../../components/Button'
 
 import { useEffect } from 'react'
 import { usePage } from '../../contexts'
+import { useNavigate } from 'react-router-dom'
 
 import { DESKTOP_BREAKPOINT } from '../../constants'
 
 function Welcome() {
     const { isDesktop, setIsDesktop } = usePage()
+
+    const navigator = useNavigate()
 
     function handleResize(): void {
         if (window.innerWidth < DESKTOP_BREAKPOINT) setIsDesktop(false)
@@ -26,7 +29,13 @@ function Welcome() {
                 <img src={logoAlt} alt="Logo with alternative colors" />
                 <h1>Centralize o controle das suas finanças</h1>
                 <p>De forma rápida e segura</p>
-                <Button>Iniciar</Button>
+                <Button
+                    onClickFunction={() => {
+                        navigator('/home')
+                    }}
+                >
+                    Iniciar
+                </Button>
             </ContentSection>
             {isDesktop && (
                 <SVGSection>

@@ -24,6 +24,7 @@ function Input({
                 <input
                     {...register(name)}
                     type={type}
+                    min={0}
                     placeholder={placeholder}
                 />
                 {helperText && <p className="helper-text">{helperText}</p>}

@@ -19,6 +19,10 @@ interface IPageProvider {
     setIsDesktop: Dispatch<SetStateAction<boolean>>
     overviewCards: Array<IOverviewCard>
     setOverviewCards: Dispatch<SetStateAction<Array<IOverviewCard>>>
+    descriptionInput: string
+    setDescriptionInput: Dispatch<SetStateAction<string>>
+    valueInput: string
+    setValueInput: Dispatch<SetStateAction<string>>
 }
 
 const PageContext = createContext<IPageProvider>({} as IPageProvider)
@@ -34,9 +38,22 @@ function PageProvider({ children }: IPageProps) {
 
     const [overviewCards, setOverviewCards] = useState<Array<IOverviewCard>>([])
 
+    const [descriptionInput, setDescriptionInput] = useState<string>('')
+
+    const [valueInput, setValueInput] = useState<string>('')
+
     return (
         <PageContext.Provider
-            value={{ isDesktop, setIsDesktop, overviewCards, setOverviewCards }}
+            value={{
+                isDesktop,
+                setIsDesktop,
+                overviewCards,
+                setOverviewCards,
+                descriptionInput,
+                setDescriptionInput,
+                valueInput,
+                setValueInput,
+            }}
         >
             {children}
         </PageContext.Provider>

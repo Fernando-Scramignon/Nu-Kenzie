@@ -9,6 +9,8 @@ function Input({
     type = 'text',
     register,
     errors,
+    state,
+    onChange,
 }: IInputProps) {
     return (
         <Container>
@@ -24,6 +26,9 @@ function Input({
                 <input
                     {...register(name)}
                     type={type}
+                    value={state}
+                    onChange={onChange}
+                    min={0}
                     placeholder={placeholder}
                 />
                 {helperText && <p className="helper-text">{helperText}</p>}

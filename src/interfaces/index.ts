@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import { UseFormRegister } from 'react-hook-form'
+import { ChangeEvent } from 'react'
 
 interface IButtonProps {
     children: ReactNode
@@ -15,6 +16,8 @@ interface IInputProps {
     placeholder?: string
     helperText?: string
     type?: string
+    state?: any
+    onChange?: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
 interface ISelectProps {

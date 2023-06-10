@@ -7,12 +7,14 @@ import {
     LowerRow,
 } from './style'
 
-import { IOverviewCardProps } from '../../interfaces'
+import { IOverviewCard, IOverviewCardProps } from '../../interfaces'
 import { IExpensesType } from '../../interfaces'
 
 import { usePage } from '../../contexts'
 
 import { FaTrash } from 'react-icons/fa'
+
+import { BRLcurrency } from '../../utils'
 
 const ExpensesTypeMap: IExpensesType = {
     income: 'Entrada',
@@ -20,10 +22,41 @@ const ExpensesTypeMap: IExpensesType = {
 }
 
 function OverviewCard({ type, description, value, id }: IOverviewCardProps) {
-    const { overviewCards, setOverviewCards } = usePage()
+    const { overviewCards, setOverviewCards, decrementCardIdCounter } =
+        usePage()
+
+    function deleteOverviewCardsFromLocalStorage(id: number): boolean {
+        const overviewCardsJSON = localStorage.getItem('overviewCards')
+
+        if (!overviewCardsJSON) {
+            console.error("Couldn't find overview cards in local storage")
+            return false
+        }
+
+        const overviewCards: Array<IOverviewCard> =
+            JSON.parse(overviewCardsJSON)
+
+        const filteredOverviewCards = overviewCards.filter(
+            (card) => card.id != id
+        )
+        if (filteredOverviewCards.length == overviewCards.length) {
+            console.error("Couldn't find overview card with matching id")
+            return false
+        }
+
+        localStorage.setItem(
+            'overviewCards',
+            JSON.stringify(filteredOverviewCards)
+        )
+
+        return true
+    }
 
     function deleteOverviewCard(): void {
-        setOverviewCards(overviewCards.filter((card) => card.id != id))
+        deleteOverviewCardsFromLocalStorage(id)
+        const filteredCards = overviewCards.filter((card) => card.id != id)
+        decrementCardIdCounter()
+        setOverviewCards(filteredCards)
     }
 
     return (
@@ -42,7 +75,9 @@ function OverviewCard({ type, description, value, id }: IOverviewCardProps) {
                     <span className="info-section-type">
                         {ExpensesTypeMap[type]}
                     </span>
-                    <span className="info-section-value">R$ {value}</span>
+                    <span className="info-section-value">
+                        {BRLcurrency.format(value)}
+                    </span>
                 </LowerRow>
             </InfoSection>
         </Container>

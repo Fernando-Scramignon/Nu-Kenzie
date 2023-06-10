@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { appearFromRight, fadeIn } from '../../styles/animations'
 
 const Container = styled.div`
     min-height: 100vh;
@@ -24,15 +25,25 @@ const ContentSection = styled.main`
         font-family: 'Nunito', sans-serif;
         font-size: 30px;
         color: #ffffff;
+
+        animation: ${fadeIn} 300ms;
     }
 
     p {
         color: var(--grey-2);
+
+        animation: ${fadeIn} 800ms;
     }
 
     button {
         font-weight: 500;
         width: 280px;
+
+        animation: ${fadeIn} 500ms;
+    }
+
+    img {
+        animation: ${appearFromRight} 2s;
     }
 
     @media (min-width: 1024px) {
@@ -55,6 +66,7 @@ const SVGSection = styled.section`
         max-height: 500px;
         height: fit-content;
         width: fit-content;
+        animation: ${fadeIn} 2s;
     }
 `
 

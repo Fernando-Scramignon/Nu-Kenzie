@@ -9,6 +9,7 @@ interface IButtonProps {
 }
 
 interface IInputProps {
+    id: string
     name: string
     description: string
     register: UseFormRegister<any>
@@ -21,6 +22,7 @@ interface IInputProps {
 }
 
 interface ISelectProps {
+    id: string
     name: string
     register: UseFormRegister<any>
     errors?: any

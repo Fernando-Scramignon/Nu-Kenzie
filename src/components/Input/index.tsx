@@ -3,6 +3,7 @@ import { IInputProps } from '../../interfaces'
 
 function Input({
     description,
+    id,
     name,
     placeholder,
     helperText,
@@ -15,7 +16,7 @@ function Input({
     return (
         <Container>
             <TitleDiv>
-                <label htmlFor={name} className="input-label">
+                <label htmlFor={id} className="input-label">
                     {description}
                 </label>
                 {errors[name] && (
@@ -24,6 +25,7 @@ function Input({
             </TitleDiv>
             <InputDiv>
                 <input
+                    id={id}
                     {...register(name)}
                     type={type}
                     value={state}

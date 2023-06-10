@@ -57,6 +57,7 @@ function ExpensesForm() {
             onSubmit={handleSubmit(onSubmitFunction)}
         >
             <Input
+                id="description-input"
                 name="description"
                 register={register}
                 errors={errors}
@@ -67,6 +68,7 @@ function ExpensesForm() {
                 onChange={onChangeDescription}
             />
             <Input
+                id="value-input"
                 name="value"
                 register={register}
                 errors={errors}
@@ -77,6 +79,7 @@ function ExpensesForm() {
                 onChange={onChangeValue}
             />
             <Select
+                id="type-input"
                 name="type"
                 register={register}
                 description="Tipo de valor"

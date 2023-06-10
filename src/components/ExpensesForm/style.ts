@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { appearFromBottom, fadeIn } from '../../styles/animations'
 
 const Container = styled.form`
     width: 92%;
@@ -14,12 +15,15 @@ const Container = styled.form`
     flex-direction: column;
     gap: 15px;
 
+    animation: ${fadeIn} 1s;
+
     button {
         margin-top: 10px;
         width: 100%;
     }
 
     @media (min-width: 1024px) {
+        animation: ${appearFromBottom} 1s;
         min-width: 360px;
     }
 `

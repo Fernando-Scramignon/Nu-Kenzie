@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { appearFromTop } from '../../styles/animations'
 
 const Container = styled.header`
     height: 65px;
@@ -10,6 +11,8 @@ const Container = styled.header`
 
     display: flex;
     align-items: center;
+
+    animation: ${appearFromTop} 1s;
 
     img {
         width: 113;

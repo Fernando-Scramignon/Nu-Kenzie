@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { appearFromBottom } from '../../styles/animations'
 
 const Container = styled.div`
     width: 92%;
@@ -13,6 +14,8 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 14px;
+
+    animation: ${appearFromBottom} 500ms;
 
     @media (min-width: 1024px) {
         width: 100%;

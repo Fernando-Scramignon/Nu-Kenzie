@@ -24,4 +24,17 @@ const appearFromRight = keyframes`
 
 `
 
-export { fadeIn, appearFromRight }
+const appearFromBottom = keyframes`
+    from {
+        opacity: 0;
+        transform: translateY(75px);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+`
+
+export { fadeIn, appearFromRight, appearFromBottom }

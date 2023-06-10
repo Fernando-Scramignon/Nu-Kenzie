@@ -38,11 +38,15 @@ function ExpensesForm() {
     function onSubmitFunction(data: IOverviewCard): void {
         // avoids mutation and adds id
         const dataCopy: IOverviewCard = { ...data, id: cardIdCounter }
-        const newArray = [dataCopy, ...overviewCards]
+        const newOverviewCards = [dataCopy, ...overviewCards]
+
+        // saves to localstorage
+        const newOverviewCardsJSON: string = JSON.stringify(newOverviewCards)
+        localStorage.setItem('overviewCards', newOverviewCardsJSON)
 
         resetInputs()
         clearErrors()
-        setOverviewCards(newArray)
+        setOverviewCards(newOverviewCards)
         incrementCardIdCounter()
     }
 

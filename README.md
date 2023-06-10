@@ -36,7 +36,13 @@ Uma aplicação simples que permite o gerenciamento de despesas
 
 ## Rodando localmente
 
-Dentro do diretório raiz, rode o comando abaixo.
+Dentro do diretório raiz, rode o comando abaixo para instalar as dependências do projeto.
+
+```bash
+npm install
+```
+
+Para rodar a aplicação o comando é:
 
 ```bash
 npm run dev

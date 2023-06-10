@@ -1,6 +1,7 @@
 import { EmptyOverviewContainer } from './style'
 
 import OverviewCard from '../OverviewCard'
+import EmptyOverviewCard from '../EmptyOverviewCard'
 import { usePage } from '../../contexts'
 
 function ExpensesOverview() {
@@ -11,6 +12,13 @@ function ExpensesOverview() {
             <h2>Resumo financeiro</h2>
             {!overviewCards.length && (
                 <p>Você ainda não possuí nenhum lançamento</p>
+            )}
+            {overviewCards.length == 0 && (
+                <>
+                    <EmptyOverviewCard />
+                    <EmptyOverviewCard />
+                    <EmptyOverviewCard />
+                </>
             )}
             {overviewCards.map(({ description, type, value, id }, index) => (
                 <OverviewCard

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { appearFromBottom, fadeIn } from '../../styles/animations'
+import { fadeIn } from '../../styles/animations'
 
 const EmptyOverviewContainer = styled.div`
     width: 92%;
@@ -24,7 +24,7 @@ const EmptyOverviewContainer = styled.div`
         font-size: 20px;
         font-family: inherit;
 
-        animation: ${appearFromBottom} 1.5s;
+        animation: ${fadeIn} 1.5s;
     }
 
     @media (min-width: 1024px) {

@@ -3,10 +3,17 @@
 ## Sumário
 
 -   [Descrição](#descrição)
+-   [Endereço](#endereço-deploy)
 -   [Tecnologias](#tecnologias)
 -   [Rodando localmente](#rodando-localmente)
 
 <br/>
+
+## Endereço (deploy)
+
+[https://nu-kenzie-rho-nine.vercel.app](https://nu-kenzie-rho-nine.vercel.app)
+
+<br />
 
 ## Descrição
 

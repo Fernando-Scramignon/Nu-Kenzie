@@ -52,10 +52,7 @@ function ExpensesForm() {
     }
 
     return (
-        <Container
-            onClick={() => setDescriptionInput('')}
-            onSubmit={handleSubmit(onSubmitFunction)}
-        >
+        <Container onSubmit={handleSubmit(onSubmitFunction)}>
             <Input
                 id="description-input"
                 name="description"

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { fadeIn } from '../../styles/animations'
 
 interface ITypeProps {
     type: 'income' | 'expense'
@@ -13,6 +14,8 @@ const Container = styled.div`
 
     display: flex;
     gap: 14px;
+
+    animation: ${fadeIn} 500ms;
 `
 
 const Type = styled.div<ITypeProps>`

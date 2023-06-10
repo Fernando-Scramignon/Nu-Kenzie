@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { fadeIn } from '../../styles/animations'
 
-const EmptyOverviewContainer = styled.div`
+const Container = styled.div`
     width: 92%;
     max-width: 360px;
     padding-left: 10px;
@@ -34,4 +34,4 @@ const EmptyOverviewContainer = styled.div`
     }
 `
 
-export { EmptyOverviewContainer }
+export { Container }

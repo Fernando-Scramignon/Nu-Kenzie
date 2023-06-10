@@ -1,4 +1,4 @@
-import { EmptyOverviewContainer } from './style'
+import { Container } from './style'
 
 import OverviewCard from '../OverviewCard'
 import EmptyOverviewCard from '../EmptyOverviewCard'
@@ -8,7 +8,7 @@ function ExpensesOverview() {
     const { overviewCards } = usePage()
 
     return (
-        <EmptyOverviewContainer>
+        <Container>
             <h2>Resumo financeiro</h2>
             {!overviewCards.length && (
                 <p>Você ainda não possuí nenhum lançamento</p>
@@ -29,7 +29,7 @@ function ExpensesOverview() {
                     value={value}
                 />
             ))}
-        </EmptyOverviewContainer>
+        </Container>
     )
 }
 

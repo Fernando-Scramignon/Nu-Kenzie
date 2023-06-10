@@ -46,6 +46,24 @@ const UpperRow = styled.div`
         font-size: 18px;
         color: var(--grey-4);
     }
+
+    .trash {
+        height: 22px;
+        width: 22px;
+        border-radius: 5px;
+
+        background-color: var(--grey-2);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        cursor: pointer;
+        transition: 300ms;
+        &:hover {
+            background-color: var(--grey-3);
+        }
+    }
 `
 
 const LowerRow = styled.div`

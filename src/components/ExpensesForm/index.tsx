@@ -21,21 +21,29 @@ function ExpensesForm() {
         setDescriptionInput,
         valueInput,
         setValueInput,
+        resetInputs,
+        cardIdCounter,
+        incrementCardIdCounter,
     } = usePage()
 
     const {
         register,
         handleSubmit,
         formState: { errors },
+        clearErrors,
     } = useForm<IOverviewCard>({
         resolver: yupResolver(expensesFormSchema),
     })
 
     function onSubmitFunction(data: IOverviewCard): void {
-        // avoids mutation
-        const dataCopy: IOverviewCard = { ...data }
+        // avoids mutation and adds id
+        const dataCopy: IOverviewCard = { ...data, id: cardIdCounter }
         const newArray = [dataCopy, ...overviewCards]
+
+        resetInputs()
+        clearErrors()
         setOverviewCards(newArray)
+        incrementCardIdCounter()
     }
 
     function onChangeDescription(event: ChangeEvent<HTMLInputElement>) {
@@ -47,11 +55,9 @@ function ExpensesForm() {
     }
 
     return (
-        <Container
-            onClick={() => setDescriptionInput('')}
-            onSubmit={handleSubmit(onSubmitFunction)}
-        >
+        <Container onSubmit={handleSubmit(onSubmitFunction)}>
             <Input
+                id="description-input"
                 name="description"
                 register={register}
                 errors={errors}
@@ -62,6 +68,7 @@ function ExpensesForm() {
                 onChange={onChangeDescription}
             />
             <Input
+                id="value-input"
                 name="value"
                 register={register}
                 errors={errors}
@@ -72,6 +79,7 @@ function ExpensesForm() {
                 onChange={onChangeValue}
             />
             <Select
+                id="type-input"
                 name="type"
                 register={register}
                 description="Tipo de valor"

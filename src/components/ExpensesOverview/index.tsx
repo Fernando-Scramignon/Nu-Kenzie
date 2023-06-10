@@ -12,8 +12,9 @@ function ExpensesOverview() {
             {!overviewCards.length && (
                 <p>Você ainda não possuí nenhum lançamento</p>
             )}
-            {overviewCards.map(({ description, type, value }, index) => (
+            {overviewCards.map(({ description, type, value, id }, index) => (
                 <OverviewCard
+                    id={id}
                     key={index}
                     description={description}
                     type={type}

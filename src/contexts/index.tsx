@@ -41,7 +41,11 @@ function PageProvider({ children }: IPageProps) {
         window.innerWidth >= DESKTOP_BREAKPOINT
     )
 
-    const [overviewCards, setOverviewCards] = useState<Array<IOverviewCard>>([])
+    const [overviewCards, setOverviewCards] = useState<Array<IOverviewCard>>(
+        localStorage.getItem('overviewCards')
+            ? JSON.parse(localStorage.getItem('overviewCards')!)
+            : []
+    )
 
     const [descriptionInput, setDescriptionInput] = useState<string>('')
 

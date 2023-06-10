@@ -24,6 +24,10 @@ interface IPageProvider {
     valueInput: string
     setValueInput: Dispatch<SetStateAction<string>>
     resetInputs: () => void
+    cardIdCounter: number
+    setCardIdCounter: Dispatch<SetStateAction<number>>
+    incrementCardIdCounter: () => void
+    decrementCardIdCounter: () => void
 }
 
 const PageContext = createContext<IPageProvider>({} as IPageProvider)
@@ -43,6 +47,16 @@ function PageProvider({ children }: IPageProps) {
 
     const [valueInput, setValueInput] = useState<string>('')
 
+    const [cardIdCounter, setCardIdCounter] = useState<number>(0)
+
+    function incrementCardIdCounter() {
+        setCardIdCounter(cardIdCounter + 1)
+    }
+
+    function decrementCardIdCounter() {
+        if (cardIdCounter > 0) setCardIdCounter(cardIdCounter - 1)
+    }
+
     function resetInputs() {
         setValueInput('')
         setDescriptionInput('')
@@ -60,6 +74,10 @@ function PageProvider({ children }: IPageProps) {
                 valueInput,
                 setValueInput,
                 resetInputs,
+                cardIdCounter,
+                setCardIdCounter,
+                incrementCardIdCounter,
+                decrementCardIdCounter,
             }}
         >
             {children}

@@ -36,7 +36,9 @@ interface IOverviewCardProps {
     type: 'income' | 'expense'
 }
 
-interface IOverviewCard extends IOverviewCardProps {}
+interface IOverviewCard extends IOverviewCardProps {
+    id: number
+}
 
 interface IExpensesType {
     income: string

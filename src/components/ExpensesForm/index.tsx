@@ -22,6 +22,8 @@ function ExpensesForm() {
         valueInput,
         setValueInput,
         resetInputs,
+        cardIdCounter,
+        incrementCardIdCounter,
     } = usePage()
 
     const {
@@ -34,13 +36,14 @@ function ExpensesForm() {
     })
 
     function onSubmitFunction(data: IOverviewCard): void {
-        // avoids mutation
-        const dataCopy: IOverviewCard = { ...data }
+        // avoids mutation and adds id
+        const dataCopy: IOverviewCard = { ...data, id: cardIdCounter }
         const newArray = [dataCopy, ...overviewCards]
 
         resetInputs()
         clearErrors()
         setOverviewCards(newArray)
+        incrementCardIdCounter()
     }
 
     function onChangeDescription(event: ChangeEvent<HTMLInputElement>) {

@@ -24,7 +24,7 @@ const EmptyOverviewContainer = styled.div`
         font-size: 20px;
         font-family: inherit;
 
-        animation: ${appearFromBottom} 2s;
+        animation: ${appearFromBottom} 1.5s;
     }
 
     @media (min-width: 1024px) {

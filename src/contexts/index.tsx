@@ -23,6 +23,7 @@ interface IPageProvider {
     setDescriptionInput: Dispatch<SetStateAction<string>>
     valueInput: string
     setValueInput: Dispatch<SetStateAction<string>>
+    resetInputs: () => void
 }
 
 const PageContext = createContext<IPageProvider>({} as IPageProvider)
@@ -42,6 +43,11 @@ function PageProvider({ children }: IPageProps) {
 
     const [valueInput, setValueInput] = useState<string>('')
 
+    function resetInputs() {
+        setValueInput('')
+        setDescriptionInput('')
+    }
+
     return (
         <PageContext.Provider
             value={{
@@ -53,6 +59,7 @@ function PageProvider({ children }: IPageProps) {
                 setDescriptionInput,
                 valueInput,
                 setValueInput,
+                resetInputs,
             }}
         >
             {children}

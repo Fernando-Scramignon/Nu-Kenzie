@@ -21,12 +21,14 @@ function ExpensesForm() {
         setDescriptionInput,
         valueInput,
         setValueInput,
+        resetInputs,
     } = usePage()
 
     const {
         register,
         handleSubmit,
         formState: { errors },
+        clearErrors,
     } = useForm<IOverviewCard>({
         resolver: yupResolver(expensesFormSchema),
     })
@@ -35,6 +37,9 @@ function ExpensesForm() {
         // avoids mutation
         const dataCopy: IOverviewCard = { ...data }
         const newArray = [dataCopy, ...overviewCards]
+
+        resetInputs()
+        clearErrors()
         setOverviewCards(newArray)
     }
 

@@ -17,7 +17,7 @@
 
 ## Descrição
 
-Uma aplicação simples que permite o gerenciamento de despesas
+Uma aplicação simples de gerenciamento de despesas. Possui a habilidade de inserção de valores de entrada, despesas e o calculo total de todas as operações. É mobile friendly, possuí animações, os formulários são validados com yup e mostram erros em tempo real.
 
 <br/>
 
